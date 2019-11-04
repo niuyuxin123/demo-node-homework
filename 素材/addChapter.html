@@ -180,7 +180,9 @@
         window.location = "http://localhost:8083/listmanager/"
     }
     $("#sub").click(function() {
-        $.post("http://localhost:8083/add", {"title": $("#title").val(), "content": $("#ct").html()}, function(data) {
+        var msg={"title": $("#title").val(), "content": $("#ct").html()};
+        var msg1=JSON.stringify(msg);
+        $.post("http://localhost:8083/add", msg1, function(data) {
             window.location = "http://localhost:8083/listmanager/"
         })
     })

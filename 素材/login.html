@@ -110,8 +110,36 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
+    // var username=document.getElementById('username');
+    // var pwd=document.getElementById('pwd');
+    // var login=document.getElementById('login');
+    // login.onclick=function(){
+    //     var a1=username.value;
+    //     var a2=username.value;
+    //     var msg={
+    //         user:a1,
+    //         password:a2
+    //     }
+    //     login.action='http://localhost:8083/login';
+    // }
 
+    $('#login').click(function(){
+        var msg={
+        user:$('#username').val(),
+        password:$('#pwd').val()
+        }
+        var msg1=JSON.stringify(msg);
+        console.log(msg1);
+        $.post('http://localhost:8083/login',msg1,function(message){
+            console.log('res', message);
+            console.log(message=='OK');
+            if(message=='OK'){
+                console.log('ok')
+                window.location='http://localhost:8083/addChapter';
+            }
+        })
 
+    });
     
 </script>
-</html>
+</ht

@@ -212,6 +212,24 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
-   
+    $(document).ready(function() {
+        var str='';
+        $.get("http://localhost:8083/arr", function(data) {
+            console.log(data);
+            arr=JSON.parse(data);
+            console.log(arr);
+            for(var i=0;i<arr.length;i++){
+                str+='<tr>';
+                str+='<td>'+arr[i]['chapterId']+'</td>';
+                str+='<td>'+arr[i]['chapterName']+'</td>';
+                str+='<td>'+arr[i]['views']+'</td>';
+                str+='<td>'+arr[i]['author']+'</td>';
+                str+='</tr>';
+                
+            }
+            console.log(str);
+            $('#result').html(str);
+        })
+    })
 </script>
 </html>

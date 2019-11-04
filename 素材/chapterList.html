@@ -94,12 +94,10 @@
 
 <script>
     var target=document.getElementsByClassName('readmore');
+    console.log(target);
     for(var i=0;i<target.length;i++){
         target[i].index=i;
-        target[i].onclick=function(){
-            console.log(target[i]);
-            target[i].href='/detail?chapterId='+target[i];
-        }
+        target[i].href='/detail?chapterId='+target[i].index;
     }
 </script>
 </html>
