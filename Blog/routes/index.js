@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
   res.render('login');
 });
 router.post('/',function(req,res){
-  if(req.body.username==arr.users[0].username&&req.body.pwd==arr.users[0].password){
+  if(req.body.username===arr.users[0].username&&req.body.pwd===arr.users[0].password){
     
     res.render('list');
   }
